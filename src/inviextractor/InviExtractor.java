@@ -27,6 +27,8 @@ public class InviExtractor {
     private static ArrayList<Invitacion> invitaciones = new ArrayList<Invitacion>();
     private static final File invisGuardadas = new File("invis.dat");
     private static final String chromeDriverPath = "chromedriver.exe";
+    // Bot API KEY
+    private static final String botApiKey = "";
     // ID de chat de Instagram al que enviar las alertas
     private static final int chatId = -382395582;
     // Tiempo de espera entre cada petición
@@ -157,7 +159,7 @@ public class InviExtractor {
             Logger.getLogger(InviExtractor.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        GetRequest request = new GetRequest("https://api.telegram.org/bot854572573:AAHjoP2bm9Xy7d66zgoXQ_NxmYN4WUsjS5s/sendMessage?chat_id=" + chatId + "&text=" + encodeValue(inviText));
+        GetRequest request = new GetRequest("https://api.telegram.org/bot" + botApiKey + "/sendMessage?chat_id=" + chatId + "&text=" + encodeValue(inviText));
 
     }
 
